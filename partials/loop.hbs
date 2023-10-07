@@ -1,0 +1,14 @@
+{{!-- This is the post loop - each post will be output using this markup --}}
+{{#foreach posts}}
+        <div class="mb-12">
+          <h2 class="mb-2 text-xl font-semibold text-slate-600"><a class="hover:text-slate-700" href="{{url}}">{{title}}</a></h2>
+          <div class="space-x-4 pr-4 text-sm text-slate-500">
+            <span><i class="bi bi-calendar3"></i> {{date format="YYYY-MM-DD"}}</span>
+            <span>
+                {{#if tags}}
+                <i class="bi bi-tags"></i> {{#foreach tags}}<a href="{{url}}" title="{{name}}">{{name}}</a> {{/foreach}}
+                {{/if}}
+            </span>
+          </div>
+        </div>
+{{/foreach}}

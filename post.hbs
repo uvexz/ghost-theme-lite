@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{!-- This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. --}}
+
+{{!-- Everything inside the #post tags pulls data from the page --}}
+
+{{#post}}
+
+    <article class="prose prose-sm prose-slate md:prose-base prose-a:text-sky-600 prose-a:no-underline hover:prose-a:text-sky-500 prose-ul:list-outside prose-table:border prose-th:border prose-th:p-2 prose-td:border prose-td:p-2 prose-img:rounded-xl prose-img:border prose-h1:text-slate-600 prose-h2:text-slate-600 prose-h3:text-slate-600 prose-h4:text-slate-600 prose-h5:text-slate-600 prose-blockquote:text-slate-500 max-w-none text-slate-500">
+
+    {{content}}
+
+    <div class="not-prose flex justify-between mt-4 py-4 text-sm font-light border-t uppercase">
+        <span> <i class="bi bi-calendar3"></i> {{date format="YYYY-MM-DD"}}&nbsp; <i class="bi bi-eye"></i> <span id="ArtalkPV">1+</span> Views </span>
+        <span class="text-right"> <i class="bi bi-pencil-square"></i> <a href="edit" class="text-secondary text-decoration-none">Edit</a>&nbsp; <i class="bi bi-chevron-double-up"></i> <a href="#" class="text-secondary text-decoration-none">Top</a> </span>
+    </div>
+
+    </article>
+    <div id="comments" class="not-prose"></div>
+
+<link href="https://cdn.sevencdn.com/combine/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.css,npm/artalk@2/dist/ArtalkLite.css" rel="stylesheet">
+<script src="https://cdn.sevencdn.com/combine/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js,npm/artalk@2/dist/ArtalkLite.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        baguetteBox.run('.prose');
+    });
+</script>
+
+{{/post}}

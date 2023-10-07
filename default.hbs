@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="dns-prefetch" href="https://cdn.sevencdn.com">
+    {{!-- Page Meta --}}
+    <title>
+        {{#is "home"}} 
+            {{@site.title}}
+        {{else}}
+            {{#is "tag"}}
+                {{#tag}}
+                    {{name}} - Tag - {{@site.title}}
+                {{/tag}}
+            {{else}}
+                {{#is "page, post"}}
+                    {{meta_title}} - {{@site.title}}
+                {{else}}
+                    {{meta_title}}
+                {{/is}}
+            {{/is}}
+        {{/is}}
+    </title>
+
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Brand icon --}}
+    <link rel="shortcut icon" href="{{asset 'favicon.ico'}}">
+    <link rel="stylesheet" href="{{asset 'css/lite.css'}}">
+    <link rel="stylesheet" href="https://cdn.sevencdn.com/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.min.css">
+</head>
+<body>
+<div class="container mx-auto mt-20 p-4">
+    <div class="header">
+        <div class="mb-4 text-3xl font-bold text-slate-600">
+                        {{#is "home"}} 
+                            <i class="bi bi-triangle-fill"></i>&nbsp;{{@site.title}}
+                        {{else}}
+                            {{#is "tag"}}
+                                {{#tag}}
+                                    <i class="bi bi-tags"></i>&nbsp;{{name}}
+                                {{/tag}}
+                            {{else}}
+                                {{meta_title}}
+                            {{/is}}
+                        {{/is}}
+        </div>
+
+        {{navigation}}
+    </div>
+    <div class="main-content">
+        {{{body}}}
+    </div>
+</div>
+<div class="mt-10 w-full border-t bg-slate-50 py-5 text-center">
+  <span class="text-xs font-light uppercase text-slate-400"><i class="bi bi-c-circle text-muted"></i> {{date format="YYYY"}} <a href="{{@site.url}}" class="text-secondary text-decoration-none">{{@site.title}}</a>. Powered by <a href="https://github.com/TryGhost/Ghost" target="_blank" class="hover:text-sky-600">Ghost</a> with theme <a href="https://github.com/uvexz/ghost-theme-lite" target="_blank" class="text-secondary text-decoration-none">Lite</a> <a href="{{@site.url}}/ghost/" class="align-self-center"><i class="bi bi-shield-lock text-secondary"></i></a>&nbsp;<a href="{{@site.url}}/rss/" class="align-self-center"><i class="bi bi-rss text-secondary"></i></a></span>
+</div>
+</body>
+
+{{ghost_foot}}
+
+<script src="https://cdn.sevencdn.com/gh/instantpage/instant.page@5.2.0/instantpage.min.js"></script>
+</body></html>

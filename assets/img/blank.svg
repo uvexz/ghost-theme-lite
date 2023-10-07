@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1px" height="1px" viewBox="0 0 1 1" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M0 0L1 0L1 1L0 1L0 0Z" id="path_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="框架" clip-path="url(#clip_1)">
+    <path d="M0 0L1 0L1 1L0 1L0 0Z" id="框架" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>
